@@ -9,14 +9,15 @@ let nombreAventurero = prompt("Saludos viajero! cual es tu nombre?")
 
 
 class Aventurero{
-  constructor(nombre, oro,){
+  constructor(nombre, oro, vida, fuerza){
   this.nombre = nombre
   this.oro = oro
-  
+  this.vida = vida
+  this.fuerza = fuerza
 }
 }
 
-const heroe1 = new Aventurero( nombreAventurero , 20  ) 
+const heroe1 = new Aventurero( nombreAventurero , 20 , 100, 10 ) 
 
 
 
@@ -28,15 +29,16 @@ alert( "Con que tu nombre es "+ heroe1.nombre + " ? que curioso nombre, pero qui
 //--------------------------------------------------------------------
 const inventario = []
 
-
-function Consumible(cantidadMejora,tipoMejora,valor){
+class Consumible {
+  constructor(cantidadMejora, tipoMejora, valor) {
     this.cantidadMejora = cantidadMejora
     this.tipoMejora = tipoMejora
     this.valor = valor
+  }
 }
-const pastelDeManzana = new Consumible(10,"Vida",10)
 
-
+const pastelDeManzana = new Consumible(10,"vida",10)
+const vinoTinto = new Consumible(10,"fuerza",10)
 
 //---------------------------------------------------------------------
 
@@ -64,9 +66,10 @@ switch (respuesta1){
 
   case 3:
     alert("Bueno normalmente no hago muchas caridades pero por tu aspecto comprare ese karma...") 
+    inventario.push(pastelDeManzana)
     alert ("RECIBES PASTEL DE MANZANA") 
     alert("Bueno y ahora que probaste bocado, tal vez podrias hacer algo por nosotros a cambio...")
-    inventario.push(pastelDeManzana)
+    
    respuestaOro()
     break;
 
@@ -80,9 +83,6 @@ primerDialogo()
 function respuestaOro(){
     let respuesta2 = parseInt(prompt("Tal vez no tengamos mucho pero si nos ayudas tal vez podriamos recompensarte, que dices "+ heroe1.nombre + " ? \n 1 acepto \n 2 No me interesa \n 3 quiero pelear!! " ));
 }
-
-
-
 
 
 
