@@ -4,14 +4,29 @@ alert ("Despues de cabalgar un par de dias, te encuentras con una aldea \n Sigui
 
 let nombreAventurero = prompt("Saludos viajero! cual es tu nombre?")
 
-alert( "Con que tu nombre es "+ nombreAventurero + " ? que curioso nombre, pero quien soy yo para juzgar?" );
+
+
+class Aventurero{
+  constructor(nombre, oro,){
+  this.nombre = nombre
+  this.oro = oro
+  
+}
+}
+
+const heroe1 = new Aventurero( nombreAventurero , 20  ) 
+
+
+
+
+alert( "Con que tu nombre es "+ heroe1.nombre + " ? que curioso nombre, pero quien soy yo para juzgar?" );
 
 
 
 primerDialogo()
 
 function primerDialogo(){
-let respuesta1 = parseInt(prompt("y dime " + nombreAventurero + " que es lo que buscas en esta aldea?  \n 1 Busco pelea \n 2 Busco oro \n 3 Tengo hambre" ));
+let respuesta1 = parseInt(prompt("y dime " + heroe1.nombre + " que es lo que buscas en esta aldea?  \n 1 Busco pelea \n 2 Busco oro \n 3 Tengo hambre" ));
 
 
 
@@ -40,7 +55,7 @@ primerDialogo()
 }
 
 function respuestaOro(){
-    let respuesta2 = parseInt(prompt("Tal vez no tengamos mucho pero si nos ayudas tal vez podriamos recompensarte, que dices "+ nombreAventurero + " ? \n 1 acepto \n 2 No me interesa \n 3 quiero pelear!! " ));
+    let respuesta2 = parseInt(prompt("Tal vez no tengamos mucho pero si nos ayudas tal vez podriamos recompensarte, que dices "+ heroe1.nombre + " ? \n 1 acepto \n 2 No me interesa \n 3 quiero pelear!! " ));
 }
 
 
