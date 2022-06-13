@@ -1,4 +1,6 @@
 
+
+
 alert ("tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... ")
 alert ("Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... ")
 
@@ -22,6 +24,26 @@ const heroe1 = new Aventurero( nombreAventurero , 20  )
 alert( "Con que tu nombre es "+ heroe1.nombre + " ? que curioso nombre, pero quien soy yo para juzgar?" );
 
 
+//INVENTARIO 
+//--------------------------------------------------------------------
+const inventario = []
+
+
+function Consumible(cantidadMejora,tipoMejora,valor){
+    this.cantidadMejora = cantidadMejora
+    this.tipoMejora = tipoMejora
+    this.valor = valor
+}
+const pastelDeManzana = new Consumible(10,"Vida",10)
+
+
+
+//---------------------------------------------------------------------
+
+
+
+
+debugger
 
 primerDialogo()
 
@@ -42,13 +64,14 @@ switch (respuesta1){
 
   case 3:
     alert("Bueno normalmente no hago muchas caridades pero por tu aspecto comprare ese karma...") 
-    alert ("RECIBES PASTEL DE MANZANA")
+    alert ("RECIBES PASTEL DE MANZANA") 
     alert("Bueno y ahora que probaste bocado, tal vez podrias hacer algo por nosotros a cambio...")
-    respuestaOro()
+    inventario.push(pastelDeManzana)
+   respuestaOro()
     break;
 
 }
-if (respuesta1 >=3) { 
+if (respuesta1 > 3) { 
 alert("por favor escoge una de las opciones disponibles");
 primerDialogo()
 }
@@ -57,6 +80,7 @@ primerDialogo()
 function respuestaOro(){
     let respuesta2 = parseInt(prompt("Tal vez no tengamos mucho pero si nos ayudas tal vez podriamos recompensarte, que dices "+ heroe1.nombre + " ? \n 1 acepto \n 2 No me interesa \n 3 quiero pelear!! " ));
 }
+
 
 
 
