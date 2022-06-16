@@ -33,21 +33,20 @@ new Consumible(105,10,"RataAsada","vida",8),
       this.id = id
       this.nombreEnemigo = nombreEnemigo
       this.fuerzaEnemigo = fuerzaEnemigo
-      this.tipoMejora = tipoMejora
       this.drop = drop
     }
   }
 //-----------------------------------------------------------------------
-const Enemigos =[
-new Enemigo(106,"Tavernero","fuerzaEnemigo",10),
-new Enemigo(106,"Lobo","fuerzaEnemigo",10),
-new Enemigo(106,"Goblin","fuerzaEnemigo",10),
-new Enemigo(106,"ardillaEnojada","fuerzaEnemigo",10),
-new Enemigo(106,"elProfeFerLuna","fuerzaEnemigo",10),
+const enemigos =[
+new Enemigo(106,"Tavernero",10,10),
+new Enemigo(107,"Lobo",10,10),
+new Enemigo(108,"Goblin",10,10),
+new Enemigo(109,"ardillaEnojada",10,10),
+new Enemigo(110,"elProfeFerLuna",10,10),
 ]
 
 
-;
+
 
 
 // inventario.push(consumibles.find(item => item.id == 101));
@@ -59,20 +58,27 @@ new Enemigo(106,"elProfeFerLuna","fuerzaEnemigo",10),
 
 //---------------------------------------------------------------------
 
-// Pelea
-function pelea(){
+// 
+
+
+function pelea(parametro){
+
   debugger
   let dado = (confirm("usar un dado?"))
   
     if (dado == true ) {
-   fuerzaAventurero = (Math.random(1)* 20)
-   alert("Fuerza del dado: " + fuerzaAventurero )
+  fuerzaAventurero = (Math.random()* 20)
+
+
+   alert("Fuerza del dado: " + parseInt(fuerzaAventurero) )
     }
     else {
-  fuerzaAventurero = (heroe1.fuerza)
+  fuerzaAventurero = (heroe1.fuerza + 2)
     }
   
-  if (fuerzaAventurero > 10){
+
+  if (fuerzaAventurero > parametro)
+  {
      heroe1.oro += 2
       alert("Ganaste la pelea ganas 2 de oro")
   }
@@ -110,18 +116,15 @@ const heroe1 = new Aventurero( nombreAventurero , 20 , 100, 10 )
 
 alert( "Con que tu nombre es "+ heroe1.nombre + " ? que curioso nombre, pero quien soy yo para juzgar?" );
 
+
+
+
+
+
+
+
 //---------------------------------------------------------------------
 
-
-
-
-debugger
-
-
-
-
-
-debugger
 
 primerDialogo()
 
@@ -156,7 +159,7 @@ primerDialogo()
 }
 }
 
-debugger
+//--------------------------------------------------------------------------------------
 
 function respuestaOro(){
     let respuesta2 = parseInt(prompt("Tal vez no tengamos mucho pero si nos ayudas tal vez podriamos recompensarte, que dices "+ heroe1.nombre + " ? \n 1 acepto \n 2 No me interesa \n 3 quiero pelear!! " ));
@@ -175,7 +178,10 @@ respuestaOro()
 
 case 3:
   alert("...ok.. creo que es hora de que alguien te muetre modales!! Alza los puños") 
-   pelea()
+
+enemigoAPelear = enemigos.find(item => item.id == 106)
+pelea(enemigoAPelear.fuerzaEnemigo)
+
   break;
 
 }
