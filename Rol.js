@@ -15,6 +15,7 @@ class Consumible {
     this.valor = valor
   }
 }
+//--------------------------------------------------------------------
 const consumibles = [
 new Consumible(101,10,"pastelDeManzana1","vida",10),
 new Consumible(102,10,"pocionDeFuerza","fuerza",20),
@@ -26,9 +27,30 @@ new Consumible(105,10,"RataAsada","vida",8),
 
 //Lista Enemigos
 //---------------------------------------------------------------------
-const enemigos = [];
+
+  class Enemigo {
+    constructor(id, nombreEnemigo, fuerzaEnemigo, drop) {
+      this.id = id
+      this.nombreEnemigo = nombreEnemigo
+      this.fuerzaEnemigo = fuerzaEnemigo
+      this.tipoMejora = tipoMejora
+      this.drop = drop
+    }
+  }
+//-----------------------------------------------------------------------
+const Enemigos =[
+new Enemigo(106,"Tavernero","fuerzaEnemigo",10),
+new Enemigo(106,"Lobo","fuerzaEnemigo",10),
+new Enemigo(106,"Goblin","fuerzaEnemigo",10),
+new Enemigo(106,"ardillaEnojada","fuerzaEnemigo",10),
+new Enemigo(106,"elProfeFerLuna","fuerzaEnemigo",10),
+]
 
 
+;
+
+
+// inventario.push(consumibles.find(item => item.id == 101));
 
 
 
@@ -43,19 +65,20 @@ function pelea(){
   let dado = (confirm("usar un dado?"))
   
     if (dado == true ) {
-   fuerzaAventurero = (Math.random(0)* 20)
+   fuerzaAventurero = (Math.random(1)* 20)
+   alert("Fuerza del dado: " + fuerzaAventurero )
     }
     else {
   fuerzaAventurero = (heroe1.fuerza)
     }
   
-  if (fuerzaAventurero >= 10){
-     heroe1.oro -= 2
-      alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro")
+  if (fuerzaAventurero > 10){
+     heroe1.oro += 2
+      alert("Ganaste la pelea ganas 2 de oro")
   }
   
     else {
-      heroe1.oro += 2
+      heroe1.oro -= 2
       alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro")
   }
   
