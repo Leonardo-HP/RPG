@@ -1,11 +1,10 @@
 
 
-
+debugger
 alert ("tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... ")
 alert ("Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... ")
-
+debugger
 let nombreAventurero = prompt("Saludos viajero! cual es tu nombre?")
-
 
 
 class Aventurero{
@@ -64,24 +63,28 @@ function RecibirPastelDeManzana(){
 debugger
 
 function pelea(){
+debugger
+let dado = (confirm("usar un dado?"))
 
-  if (confirm("usar un dado?")) {
-   let fuerzaAventurero = Math.random(0)* 20
+  if (dado == true ) {
+ fuerzaAventurero = (Math.random(0)* 20)
   }
   else {
-  let fuerzaAventurero = heroe1.fuerza
+fuerzaAventurero = (heroe1.fuerza)
   }
 
 if (fuerzaAventurero >= 10){
-  
-  heroe1.oro += 2
-    alert("Ganaste la pelea, ganas 2 de oro")
-  }
-  else {
-    
+   heroe1.oro -= 2
     alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro")
-  }
 }
+
+  else {
+    heroe1.oro += 2
+    alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro")
+}
+
+}
+
 
 debugger
 
