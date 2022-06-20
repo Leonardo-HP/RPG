@@ -17,11 +17,11 @@ class Consumible {
 }
 //--------------------------------------------------------------------
 const consumibles = [
-new Consumible(101,10,"pastelDeManzana1","vida",10),
-new Consumible(102,10,"pocionDeFuerza","fuerza",20),
-new Consumible(103,2,"pocionDeFuerza","fuerza",50),
-new Consumible(104,2,"cangrejoAsado","vida",10),
-new Consumible(105,10,"RataAsada","vida",8),
+new Consumible(101,"pastelDeManzana1",10,"vida",10),
+new Consumible(102,"pocionDeFuerza",10,"fuerza",20),
+new Consumible(103,"pocionDeFuerza",2,"fuerza",50),
+new Consumible(104,"cangrejoAsado",2,"vida",10),
+new Consumible(105,"RataAsada",10,"vida",8),
 ]
 //-----------------------------------------------------------------------
 
@@ -56,10 +56,7 @@ new Enemigo(110,"elProfeFerLuna",10,10),
 
 
 
-//---------------------------------------------------------------------
-
-// 
-
+//! PELEA---------------------------------------------------------------
 
 function pelea(parametro){
 
@@ -85,14 +82,42 @@ function pelea(parametro){
   
     else {
       heroe1.oro -= 2
-      alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro")
+      heroe1.vida -=10
+      alert("Quedas noqueado en el suelo sin saber que paso, pierdes 2 de oro y 2 de vida")
   }
   
+if (heroe1.vida <= 0){
+  alert("Estas muerto")
+  
+
+}
   }
   
+//! COMER/USAR POCION----------------------------------------------------------------------
+
+// function comer(idConsumible){
+//todo esto tiene que ingresarse desde el html somehow y tiene que poderse usar despues de ver el inventario
+function comer(){
+let idConsumible = 103
+let buffo = consumibles.find((Consumible) =>Consumible.id === parseInt(idConsumible))
+
+//todo el consumible debe desaparecer del inventario
+
+return heroe1.vida += buffo.cantidadMejora
+
+}
+
+
+
+
+
+
+
+
+
+
 
 //-----------------------------------------------------------------------------
-
 
 
 
@@ -100,8 +125,8 @@ function pelea(parametro){
 alert ("tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... ")
 alert ("Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... ")
 debugger
-let nombreAventurero = prompt("Saludos viajero! cual es tu nombre?")
 
+let nombreAventurero = prompt("Saludos viajero! cual es tu nombre?")
 
 class Aventurero{
   constructor(nombre, oro, vida, fuerza){
@@ -112,7 +137,7 @@ class Aventurero{
 }
 }
 
-const heroe1 = new Aventurero( nombreAventurero , 20 , 100, 10 ) 
+const heroe1 = new Aventurero( nombreAventurero , 20 , 10, 10 ) 
 
 alert( "Con que tu nombre es "+ heroe1.nombre + " ? que curioso nombre, pero quien soy yo para juzgar?" );
 
@@ -130,8 +155,6 @@ primerDialogo()
 
 function primerDialogo(){
 let respuesta1 = parseInt(prompt("y dime " + heroe1.nombre + " que es lo que buscas en esta aldea?  \n 1 Busco pelea \n 2 Busco oro \n 3 Tengo hambre" ));
-
-
 
 switch (respuesta1){
 
@@ -178,8 +201,8 @@ respuestaOro()
 
 case 3:
   alert("...ok.. creo que es hora de que alguien te muetre modales!! Alza los puños") 
-
-enemigoAPelear = enemigos.find(item => item.id == 106)
+let idEnemigo = 106
+enemigoAPelear = enemigos.find(item => item.id == idEnemigo)
 pelea(enemigoAPelear.fuerzaEnemigo)
 
   break;
