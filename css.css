@@ -15,7 +15,8 @@
 text-align: center;
 overflow: hidden;
 animation: slow 2s ease forwards;
-
+width: 100%;
+margin: 90px;
 }
 
 
