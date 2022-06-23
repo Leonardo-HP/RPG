@@ -125,9 +125,17 @@ let titulo = document.getElementById("titulo")
 titulo.innerText ="tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... "
 }
 
+
 function texto2(){
   let titulo = document.getElementById("titulo")
-  titulo.innerText ="Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "  }
+  titulo.innerText ="Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "  
+
+}
+
+function texto3(){
+ titulo.innerText ="Saludos viajero! cual es tu nombre?"
+}
+
 
 
 // alert ("Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... ")
