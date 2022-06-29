@@ -1,4 +1,3 @@
-// debugger
 // //INVENTARIO 
 // //--------------------------------------------------------------------
 // const inventario = []
@@ -51,9 +50,21 @@
 
 // // inventario.push(consumibles.find(item => item.id == 101));
 
+// //! DIALOGOS---------------------------------------------------------------------------------------------------------
 
 
-
+class Parrafo {
+  constructor(id, parrafo) {
+    this.id = id
+    this.parrafo = parrafo
+  }
+}
+//--------------------------------------------------------------------
+const parrafos = [
+new Parrafo(001,"Tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... "),
+new Parrafo(002,"Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "),
+new Parrafo(003,"Saludos viajero! cual es tu nombre?")
+]
 
 
 // //! PELEA---------------------------------------------------------------
@@ -110,31 +121,56 @@
 
 
 
+hacerDialogo()
 
+function seEscucha(){
+  console.log("marca"),
+  titulo = document.getElementById("titulo"), titulo.innerText = "1"
+}
 
-
-
+function hacerDialogo() {
+  if (document.querySelector("button").value = "-") {
+let continuar = document.querySelector("button")
+continuar.addEventListener("click",()=> seEscucha())
+}
+}
 
 
 
 // //-----------------------------------------------------------------------------
-debugger
-texto1()
-function texto1(){
-let titulo = document.getElementById("titulo")
-titulo.innerText ="tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... "
+
+
+
+function resultado(){
+  let buscar = "001"
+let resultado = parrafos.find((parrafo)  => parrafo.id === "001");
+console.log(resultado)
 }
 
 
-function texto2(){
-  let titulo = document.getElementById("titulo")
-  titulo.innerText ="Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "  
 
-}
 
-function texto3(){
- titulo.innerText ="Saludos viajero! cual es tu nombre?"
-}
+
+//teniendo un array de objetos find nos permite hacer una busqueda de un objeto puntual
+// y lo buscamos por la propiedad que mas nos convenga 
+
+
+
+// debugger
+// texto1()
+// function texto1(){
+// let titulo = document.getElementById("titulo")
+// titulo.innerText ="Tras una honesta pero tranquila vida de herrero, creando armaduras para grandes caballeros desde la comodidades de tu taller \n Un dia decides que es momento de crear tus propias aventuras, vendes tu taller compras un caballo y te lanzas a la aventura.  \n \n sin realmente saber lo que estas haciendo, vas a caballo hacia donde tu instinto te guia... "
+
+// document.getElementById("continuar").onclick = texto2()
+// }
+
+
+// function texto2(){
+//   let titulo = document.getElementById("titulo")
+//   titulo.innerText ="Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "  
+
+// }
 
 
 
