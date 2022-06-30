@@ -151,8 +151,10 @@ function updateDisplay(counterVal) {
       // aqui se pregunta el nombre 
 
       case(4):
-      document.getElementById("titulo").innerHTML = parrafos.find(item => item.id == 004).parrafo + ;
+      document.getElementById("titulo").innerHTML = parrafos.find(item => item.id == 004).parrafo + heroe1.nombre +parrafos.find(item => item.id == 005).parrafo ;
 break
+
+
 
     }
 }
