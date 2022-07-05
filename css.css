@@ -25,3 +25,10 @@ background-position: center;
     font-style: italic;
 }
 
+#nombreDelHeroe{
+display: none;
+}
+
+#nombreDelHeroeVisible{
+    display:inline;
+    }

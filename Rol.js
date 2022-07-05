@@ -64,6 +64,7 @@ new Parrafo(001,"Tras una honesta pero tranquila vida de herrero, creando armadu
 new Parrafo(002,"Despues de cabalgar un par de dias, te encuentras con una aldea \n Siguiendo tu estomago te encuentras con una taverna, de la cual te recibe un un hombre corpulento, dueño del lugar, mirandote con extrañesa... "),
 new Parrafo(003,"Saludos viajero! cual es tu nombre?"),
 new Parrafo(004,"Con que tu nombre es"),
+new Parrafo(005,),
 new Parrafo(005,". . . que curioso nombre, pero quien soy yo para juzgar?")
 ]
 
@@ -146,13 +147,28 @@ function updateDisplay(counterVal) {
 
       case(3):
       document.getElementById("titulo").innerHTML = parrafos.find(item => item.id == 003).parrafo;
+
+      document.getElementById("nombreDelHeroe").id = "nombreDelHeroeVisible"
+
+    function agregarNombre(){
+  
+    const enJSON = "{"id:1", "producto1":""}";
+    const producto1 = {id: nombreHeroe,producto:input.id(nombreDelHeroe)}
+
+    localStorage.setItem(producto1,enJSON)
+    }
       break
 
       // aqui se pregunta el nombre 
 
+
       case(4):
-      document.getElementById("titulo").innerHTML = parrafos.find(item => item.id == 004).parrafo + heroe1.nombre +parrafos.find(item => item.id == 005).parrafo ;
-break
+
+    document.getElementById("titulo").innerHTML = parrafos.find(item => item.id == 004).parrafo;
+    document.getElementById("nombre").innerHTML = producto1
+
+    agregarNombre()
+   break
 
 
 
